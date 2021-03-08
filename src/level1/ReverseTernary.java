@@ -2,14 +2,14 @@ package level1;
 
 public class ReverseTernary {
 	/**
-	 * ÇÁ·Î±×·¡¸Ó½º Level 1 3Áø¹ı µÚÁı±â 
+	 * í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ Level 1 3ì§„ë²• ë’¤ì§‘ê¸° 
 	 * https://programmers.co.kr/learn/courses/30/lessons/68935
-	 * Á¡¼ö : 
+	 * ì ìˆ˜ : 6
 	 */
 	public int solution(int n) {
-		// 1. 10Áø¼ö¸¦ 3Áø¼ö·Î º¯È¯
-		// 2. 3Áø¼ö ¸®¹ö½º
-		// 3. 10Áø¼ö ´Ù½Ã º¯È¯
+		// 1. 10ì§„ìˆ˜ë¥¼ 3ì§„ìˆ˜ë¡œ ë³€í™˜
+		// 2. 3ì§„ìˆ˜ ë¦¬ë²„ìŠ¤
+		// 3. 10ì§„ìˆ˜ ë‹¤ì‹œ ë³€í™˜
 		String reverse="";
 		
 		while(n>=3) {
@@ -18,7 +18,7 @@ public class ReverseTernary {
 		}
 		reverse=reverse+n;
 		
-	    int answer = Integer.parseInt(reverse.toString(), 3);    //3Áø¹ı to 10Áø¹ı
+	    int answer = Integer.parseInt(reverse.toString(), 3);    //3ì§„ë²• to 10ì§„ë²•
 		return answer;
 	}
 
