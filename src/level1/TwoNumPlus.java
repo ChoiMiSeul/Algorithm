@@ -32,11 +32,4 @@ public class TwoNumPlus {
 			answer[i] = list.get(i);
 		}*/
 	}
-
-	public static void main(String[] args) {
-		int[] arr = { 0, 1, 2 };
-		solution(arr);
-		System.out.println("연봉 사천");
-	}
-
 }
