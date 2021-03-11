@@ -1,24 +1,20 @@
 package level1;
 
 import java.sql.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
 
 public class TwoNumPlus {
 	/**
-	 * ÇÁ·Î±×·¡¸Ó½º Level 1 µÎ °³ »Ì¾Æ¼­ ´õÇÏ±â
+	 * í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ Level 1 ë‘ ê°œ ë½‘ì•„ì„œ ë”í•˜ê¸°
 	 * https://programmers.co.kr/learn/courses/30/lessons/68644 
-	 * Á¡¼ö : +6
-	 * ³¯Â¥ : 210311 23:00~03:12
+	 * ì ìˆ˜ : +6
+	 * ë‚ ì§œ : 210311 23:00~03:12
 	 */
 	public static int[] solution(int[] numbers) {
-		// 1. ÀÔ·Â¹ŞÀº ¹è¿­¿¡¼­ µÎ°³ÀÇ ¼ıÀÚ ¼±ÅÃ <-for¹® µ¹·Á¼­ ¸ğµç ¼ö ÇÕÇÏ±â º»ÀÎ³¢¸® ÇÕÀº¤¤¤¤
-		// 2. ±× ¼ıÀÚ¸¦ ´õÇØ¼­ ³ª¿Ã ¼ö ÀÖ´Â ¸ğµç ¼ö ¹è¿­¿¡ ÀúÀå <- setÀÌ¿ëÇØ¼­ Áßº¹ »èÁ¦
-		// 3. ¿À¸§Â÷¼ø Á¤·Ä <-¹öºí¼ÒÆ® or ArraysSort
+		// 1. ì…ë ¥ë°›ì€ ë°°ì—´ì—ì„œ ë‘ê°œì˜ ìˆ«ì ì„ íƒ <-forë¬¸ ëŒë ¤ì„œ ëª¨ë“  ìˆ˜ í•©í•˜ê¸° ë³¸ì¸ë¼ë¦¬ í•©ì€ã„´ã„´
+		// 2. ê·¸ ìˆ«ìë¥¼ ë”í•´ì„œ ë‚˜ì˜¬ ìˆ˜ ìˆëŠ” ëª¨ë“  ìˆ˜ ë°°ì—´ì— ì €ì¥ <- setì´ìš©í•´ì„œ ì¤‘ë³µ ì‚­ì œ
+		// 3. ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬ <-ë²„ë¸”ì†ŒíŠ¸ or ArraysSort
 		Set<Integer> set = new TreeSet<>();
 
 		for (int i = 0; i < numbers.length; i++) {
@@ -40,7 +36,7 @@ public class TwoNumPlus {
 	public static void main(String[] args) {
 		int[] arr = { 0, 1, 2 };
 		solution(arr);
-		System.out.println("¿¬ºÀ »çÃµ");
+		System.out.println("ì—°ë´‰ ì‚¬ì²œ");
 	}
 
 }
