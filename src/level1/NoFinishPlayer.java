@@ -2,14 +2,14 @@ package level1;
 
 public class NoFinishPlayer {
 	/**
-	 * ÇÁ·Î±×·¡¸Ó½º Level 1 ¿ÏÁÖÇÏÁö ¸øÇÑ ¼±¼ö 
+	 * í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ Level 1 ì™„ì£¼í•˜ì§€ ëª»í•œ ì„ ìˆ˜ 
 	 * https://programmers.co.kr/learn/courses/30/lessons/42576
-	 * Á¡¼ö :
-	 * ³¯Â¥ : 210312 12:40~
+	 * ì ìˆ˜ :
+	 * ë‚ ì§œ : 210312 12:40~02:00
 	 */
 	public static String solution(String[] participant, String[] completion) {
-		//1. ¹è¿­ ºñ±³
-		//2. ¹è¿­¿¡ ÀÖÁö ¾ÊÀº °ª ¹İÈ¯
+		//1. ë°°ì—´ ë¹„êµ
+		//2. ë°°ì—´ì— ìˆì§€ ì•Šì€ ê°’ ë°˜í™˜
 		String answer = "";
 		
 		for(int i=0;i<participant.length;i++) {
