@@ -25,11 +25,4 @@ public class NoFinishPlayer {
 		}
 	    return answer;
 	}
-
-	public static void main(String[] args) {
-		String[] arr=new String[] {"leo", "kiki", "eden"};
-		String[] arrr=new String[] {"eden", "kiki"};
-		System.out.println(solution(arr,arrr));
-	}
-
 }
