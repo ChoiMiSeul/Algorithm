@@ -12,6 +12,19 @@ public class ReverseTernary {
 		// 3. 10진수 다시 변환
 		String reverse="";
 		
+		for(int i=0;i<n;i++) {
+			reverse+=n%3;
+			n=n/3;
+		}reverse+=n;
+		
+		return Integer.parseInt(reverse.toString(),3);
+	}
+
+	public static void main(String[] args) {
+	}
+}
+/*String reverse="";
+		
 		while(n>=3) {
 			reverse+=(n%3);
 			n=n/3;
@@ -20,8 +33,4 @@ public class ReverseTernary {
 		
 	    int answer = Integer.parseInt(reverse.toString(), 3);    //3진법 to 10진법
 		return answer;
-	}
-
-	public static void main(String[] args) {
-	}
-}
+*/

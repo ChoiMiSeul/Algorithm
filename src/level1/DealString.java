@@ -26,3 +26,21 @@ public class DealString {
 		System.out.println(solution("134a"));
 	}
 }
+
+/*
+ * class Solution {
+    public boolean solution(String s) {
+		boolean answer=true;
+		
+		byte[] arr=s.getBytes();
+		
+		if(s.length()==4 || s.length()==6) {
+			int count=0;
+			for(int i=0;i<s.length();i++) {
+				if(arr[i]>=48 && arr[i]<=57) count++;
+			}
+			if(count==4 || count==6) return true;
+		}return false;
+	}
+}
+*/

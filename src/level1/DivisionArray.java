@@ -1,48 +1,36 @@
 package level1;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class DivisionArray {
 	/**
-	 * ÇÁ·Î±×·¡¸Ó½º Level 1 ³ª´©¾î ¶³¾îÁö´Â ¼ıÀÚ ¹è¿­
+	 * í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ Level 1 ë‚˜ëˆ„ì–´ ë–¨ì–´ì§€ëŠ” ìˆ«ì ë°°ì—´
 	 * https://programmers.co.kr/learn/courses/30/lessons/12910
-	 * Á¡¼ö : +1
-	 * ³¯Â¥ : 210310
+	 * ì ìˆ˜ : +1
+	 * ë‚ ì§œ : 210310
 	 */
 	public static int[] solution(int[] arr, int divisor) {
-		//1. divisor·Î ³ª´©¾î Áö´ÂÁö È®ÀÎ
-		//2. ³ª´©¾î Áö´Â °ªµé ¹è¿­¿¡ ¿À¸§Â÷¼ø Á¤·Ä
-		//3. ¾ø´Ù¸é -1 ¹İÈ¯
-		int[] answer= {};
-		int count=0;
+		//1. divisorë¡œ ë‚˜ëˆ„ì–´ ì§€ëŠ”ì§€ í™•ì¸
+		//2. ë‚˜ëˆ„ì–´ ì§€ëŠ” ê°’ë“¤ ë°°ì—´ì— ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬
+		//3. ì—†ë‹¤ë©´ -1 ë°˜í™˜
+		Integer[] answer= {};
 		
+		List<Integer> num = new ArrayList<>();
 		for(int i=0;i<arr.length;i++) {
 			if(arr[i]%divisor==0) {
-				count++;
-			}
+				num.add(arr[i]);
+			}else if(num.size()==0) return new int[] {-1};
 		}
 		
-		if(count==0) return new int[] {-1};
-		else answer=new int[count];
-			
-		int index=0;
-		for(int i=0;i<arr.length;i++) {
-			if(arr[i]%divisor==0) {
-				answer[index++]=arr[i];
-			}
-		}		
-		
-		//Arrays.sort(answer);
-		for(int i = answer.length-1;i>=0;i--) {
-			for(int j=0;j<i;j++) {
-				if(answer[j]>answer[j+1]) {
-					int tmp=answer[j];
-					answer[j]=answer[j+1];
-					answer[j+1]=tmp;
-				}
-			}
-		}
-		
-		return answer;
+		answer=num.toArray(new Integer[num.size()]);
+	
+		Arrays.sort(answer);
+		return (int[])answer;
+	}
+	public static void main(String[] args) {
+		int[] arr= {1,2,3};
+		solution(arr,2);
 	}
 }

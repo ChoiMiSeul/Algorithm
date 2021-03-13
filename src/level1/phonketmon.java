@@ -5,32 +5,23 @@ import java.util.Set;
 
 public class phonketmon {
 	/**
-	 * ÇÁ·Î±×·¡¸Ó½º Level 1 ÆùÄÏ¸ó
+	 * í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ Level 1 í°ì¼“ëª¬
 	 * https://programmers.co.kr/learn/courses/30/lessons/1845
-	 * Á¡¼ö : +3Á¡
+	 * ì ìˆ˜ : +3ì 
 	 */
 	public int solution(int[] nums) {
-		//1. n¸¶¸®Áß n/2¸¶¸® °¡Á®°¥ ¼ö ÀÖÀ½
-		//2. °°Àº Á¾·ù´Â °°Àº ¹øÈ£
-		//3. ´Ù¾çÇÑ ÆùÄÏ¸ó °¡Áö±æ ¿øÇÔ
-	       int answer = 0;
-	       int myNum=nums.length/2; //°¡Áú ¼ö ÀÖ´Â °³¼ö
-	            
-	       
-	       Set<Integer> set = new HashSet<>();
-	       for(int i=0;i<nums.length;i++) {
-	    	   set.add(nums[i]);
-	       }
-	       
-	       if(set.size()==myNum) {
-	    	   answer=set.size();
-	       }else if(set.size()>myNum) {
-	    	   answer=myNum;
-	       }else if(set.size()<myNum) {
-	    	   answer=set.size();
-	       }
-	       //set.size() < nums.length/2 ? set.size() : num.length/2;
-	       return answer;
+		//1. në§ˆë¦¬ì¤‘ n/2ë§ˆë¦¬ ê°€ì ¸ê°ˆ ìˆ˜ ìˆìŒ
+		//2. ê°™ì€ ì¢…ë¥˜ëŠ” ê°™ì€ ë²ˆí˜¸
+		//3. ë‹¤ì–‘í•œ í°ì¼“ëª¬ ê°€ì§€ê¸¸ ì›í•¨
+		//4. ìµœëŒ€í•œ ë‹¤ì–‘í•œ í¬ì¼“ëª¬ì„ ê°€ì§ˆ ìˆ˜ ìˆëŠ” ì¢…ë¥˜ì˜ ê°œìˆ˜
+		int myNum=nums.length/2;
+		
+		Set<Integer> set=new HashSet<>();
+		for(int i=0;i<nums.length;i++) {
+			set.add(nums[i]);
+		}
+		
+	    return set.size()>=myNum ? myNum : set.size();
 	}
 
 	public static void main(String[] args) {

@@ -2,16 +2,34 @@ package level1;
 
 public class CountPny {
 	/**
-	 * ÇÁ·Î±×·¡¸Ó½º Level 1 ¹®ÀÚ¿­ ³» P¿Í YÀÇ °³¼ö
+	 * ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½Ó½ï¿½ Level 1 ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ Pï¿½ï¿½ Yï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
 	 * https://programmers.co.kr/learn/courses/30/lessons/12916?language=java
-	 * Á¡¼ö : 1005
+	 * ï¿½ï¿½ï¿½ï¿½ : +5
+	 * ï¿½ï¿½Â¥ : 210308
 	 */
 
 	public static boolean solution(String s) {
-		// 1. P,Y °³¼ö°¡ °°À¸¸é Æ®·ç ¾Æ´Ï¸é ÆÞ½º
-		// 2. p,y°¡ ÇÏ³ªµµ ¾øÀ¸¸é Æ®·ç
-		// 3. ´ë¼Ò¹®ÀÚ ±¸ºÐ x - ·Î¿ì, ¾îÆÛ Å¬·¡½º
-		s = s.toLowerCase();
+		// 1. P,Y ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Æ®ï¿½ï¿½ ï¿½Æ´Ï¸ï¿½ ï¿½Þ½ï¿½
+		// 2. p,yï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Æ®ï¿½ï¿½
+		// 3. ï¿½ï¿½Ò¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ x - ï¿½Î¿ï¿½, ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½
+		s=s.toLowerCase();
+		int num=0;
+		
+		for(int i=0;i<s.length();i++) {
+			if(s.charAt(i)=='p') num++;
+			if(s.charAt(i)=='y') num--;
+		}
+		
+		return num==0 ? true : false;
+	}
+
+	public static void main(String[] args) {
+		System.out.println(solution("ofof"));
+
+	}
+}
+/*
+ * s = s.toLowerCase();
 		int numP = 0;
 		int numY = 0;
 		for (int i = 0; i < s.length(); i++) {
@@ -28,10 +46,4 @@ public class CountPny {
 			return true;
 		} 
 		return false;
-	}
-
-	public static void main(String[] args) {
-		System.out.println(solution("ofof"));
-
-	}
-}
+ */
