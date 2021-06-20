@@ -29,8 +29,6 @@ public class EnglishWordChain {
         	}
         }
         
-        System.out.println(answer[0]+" "+answer[1]);
-        
         return new int[] {0,0};
     }
 
