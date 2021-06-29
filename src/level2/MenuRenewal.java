@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MenuRenewal {
-	public String[] solution(String[] orders, int[] course) {
+	public static String[] solution(String[] orders, int[] course) {
         for(int i=0; i<orders.length; i++) {
         	boolean[] visited = new boolean[orders[i].length()];
         	combinations(orders[i], visited, 0, orders[i].length());
@@ -17,9 +17,10 @@ public class MenuRenewal {
 		List<String> list = new ArrayList<>();
 		
 		if(r == 0) {
-			for(int i=0; i<n; i++) {
+			for(int i=0; i<orders.length(); i++) {
 				if(visited[i]) {
 					list.add(orders);
+					System.out.print(orders + " ");
 				}
 			}
 			return;
@@ -33,5 +34,9 @@ public class MenuRenewal {
 	}
 
 	public static void main(String[] args) {
+		String[] o = {"ABCFG", "AC", "CDE", "ACDE", "BCFG", "ACDEH"};
+		int[] c = {2,3,4};
+		
+		System.out.println(solution(o,c));
 	}
 }
