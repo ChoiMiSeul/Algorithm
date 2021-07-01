@@ -9,7 +9,7 @@ public class MenuRenewal {
         	boolean[] visited = new boolean[orders[i].length()];
         	combinations(orders[i], visited, 0, orders[i].length());
         }
-        
+         
         return orders;
     }
 	
