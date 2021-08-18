@@ -1,47 +1,30 @@
 package level2;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class MakeALargeNumber {
+	/**
+	 * 프로그래머스 Level2 큰 수 만들기
+	 * https://programmers.co.kr/learn/courses/30/lessons/42883
+	 * 점수 : +7
+	 * 날짜 : 210818
+	 */
 	public static String solution(String number, int k) {
-//		1. int형 배열로 변환
-//		2. 정렬해서 가장 작은 수 k개 다른 배열에 넣기
-//		3. 1에서 2와 같지 않은 값만 빼서 list.add
-//		4. string으로 변환해 return
-//		(3)에서 막힘. 거기부터 다시
+		StringBuilder sb = new StringBuilder();
+		int idx = 0; //안에 for문을 시작할 시작점
+		int max = 0;
 		
-		String[] numS = number.split("");		
-        int[] num = Arrays.stream(numS).mapToInt(Integer::parseInt).toArray();
-        
-        Arrays.sort(num);
-        int[] deleteNum = new int[k];
-        
-        for(int i=0; i<k; i++) {
-        	deleteNum[i] = num[i];
-        }
-        
-        num = Arrays.stream(numS).mapToInt(Integer::parseInt).toArray(); //원래 값 얻기 위해 다시 배열화
-        List<Integer> list = new ArrayList<>(); //deleteNum에 해당하지 않는 값 넣기 위한 list
-        
-        for(int i=0; i<num.length; i++) {
-        	for(int j=0; j<k; j++) {
-        		if(num[i] == deleteNum[j]) {
-        			break;
-        		}else {
-//        			if(j == k-1) {
-//        			list.add(num[i]);
-//        			break;}
-        		}
-        	}
-//        	System.out.println(list);
-        }
-        
-        return "";
+		for(int i=0; i<number.length()-k; i++) { // 만들 문자 크기
+			for(int j=idx; j<=k+i; j++) {
+				if(max < number.charAt(j)-'0') { // 최댓값이 현재 값보다 작으면
+					max = number.charAt(j)-'0'; //-'0' : char를 정수형으로 변환
+					idx = j+1; // 찾은값 한칸 뒤부터 순회
+				}
+			}
+			sb.append(max); //max값 합체
+			max = 0; //max 초기화
+		}return sb.toString(); 
     }
 	
 	public static void main(String[] args) {
-		System.out.println(solution("1231234",3));
+		System.out.println(solution("1924",2));
 	}
 }
