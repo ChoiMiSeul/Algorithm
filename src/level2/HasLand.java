@@ -1,35 +1,29 @@
 package level2;
 
+import java.util.Arrays;
+
 public class HasLand {
-	// 1. 앞에서부터 최댓값이 아니라 점수가 가장 커지는 경우를 찾아야함
-	// 2. 이 코드에선 1과 row값이 변하는 문제가 있음 
-	static int row = 5;
-	static int max;
-	
+	/**
+	 * 프로그래머스 Level2 땅따먹기
+	 * https://programmers.co.kr/learn/courses/30/lessons/12913
+	 * 점수 : +11
+	 * 날짜 : 210823
+	 */
 	static int solution(int[][] land) {
-		int sum = 0;
 		
-		for(int i=0; i<land.length; i++) {
-			maxNum(land[i]);
-			sum += max;
-		}
-		
-		return sum;
-	}
-	
-	public static int maxNum(int[] arr) {
-		max = 0;
-		for(int i=0; i<arr.length; i++) {
-			if(i != row) {
-				if(max < arr[i]) {
-					max = arr[i];
-//					System.out.println(max+" "+i);
-					row = i;
+		for(int i=1; i<land.length; i++) { 
+			for(int j=0; j<4; j++) { 
+				int num = land[i][j];
+				for(int k=0; k<4; k++) {
+					if(k != j) {
+						land[i][j] = Math.max(land[i][j], num+land[i-1][k]);
+					}
 				}
 			}
 		}
-//		System.out.println(max);
-		return max;
+		
+		Arrays.sort(land[land.length-1]);
+		return land[land.length-1][3];
 	}
 
 	public static void main(String[] args) {
