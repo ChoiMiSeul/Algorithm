@@ -1,49 +1,34 @@
 package level2;
 
 public class DifferentBitUnder2 {
+	/**
+	 * 프로그래머스 Level2 2개 이하로 다른 비트
+	 * https://programmers.co.kr/learn/courses/30/lessons/77885
+	 * 점수 : +12
+	 * 날짜 : 210913
+	 */
 	public static long[] solution(long[] numbers) {
         long[] answer = new long[numbers.length];
-        char[] xArr = new char[10000000];
-        char[] numArr = new char[10000000];
-        
-        for(int i=0; i<xArr.length; i++) {
-        	xArr[i] = '0';
-        	numArr[i] = '0';
-        	System.out.println(xArr[i]);
-        }
         
         for(int i=0; i<numbers.length; i++) {
-        	int num = (int)numbers[i];
-        	String xBit = Integer.toBinaryString(num);
-        	int count = 0;
+        	String binary = "0" + Long.toBinaryString(numbers[i]);
+        	StringBuilder result = new StringBuilder(binary);
         	
-        	for(int j=0; j<xArr.length; j++) {
-//        		xArr[j] = xBit.charAt(j);
+        	int lastZero = result.lastIndexOf("0");
+        	result.setCharAt(lastZero, '1');
+        	
+        	if(numbers[i] % 2 == 1) {
+        		result.setCharAt(result.indexOf("1", lastZero+1), '0');
         	}
         	
-        	while(true) {
-        		num++;
-        		String numBit = Integer.toBinaryString(num);
-        		
-        		for(int j=0; j<numArr.length; j++) {
-//        			numArr[j] = numBit.charAt(j);
-        		}
-        		
-        		for(int j=0; j<numArr.length; j++) {
-        			if(numArr[j] != xArr[j]) count++;
-        		}
-        		
-        		if(count <= 2) {
-        			answer[i] = num;
-        		}
-        	}
+        	answer[i] = Long.parseLong(result.toString(), 2);
         }
         
         return answer;
     }
 
 	public static void main(String[] args) {
-		long[] arr = {1,2};
+		long[] arr = {2,7};
 		System.out.println(solution(arr));
 	}
 }
